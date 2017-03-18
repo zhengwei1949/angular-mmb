@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <main id="recommen-product" class="money-product" ng-controller="moneyproductController">
+        <div class="container">
+            <div class="cu-content">
+                <h3 class="title">
+                {{moneyproduct.productName}}</h3>
+                <h4></h4>
+                <div class="info">
+                    <span class="mall">{{moneyproduct.productFrom}}</span>
+                     <span class="addtime" style="margin-right: 4px;">{{moneyproduct.productTime}}</span>
+                    <span class="author">{{moneyproduct.productTips}}</span>
+                </div>
+                <div class="content clearfix">
+                    <div class="picwrap" ng-bind-html="moneyproduct.productImgSm">
+                    </div>
+                    <div class="conn">
+                        <!--内容开始-->
+                        <p>{{moneyproduct.productInfo}}</p>
+                        <p></p>
+                        <p>{{moneyproduct.productInfo1}}</p>
+                        <p></p>
+                        <p ng-bind-html="moneyproduct.productImg2"></p>
+                        <p></p>
+                        <!--内容结束-->
+                    </div>
+                </div>
+                <center>
+                    <div class="area"><span class="s"><a href="javascript:;" style=" display:none;"><font id="fqy">广东</font><i class="iconfont">+</i></a>
+              			<div class="drop" style="display: block;"  ng-bind-html="moneyproduct.productCity">
+         
+                    </div>
+                    </span><strong id="fqy_yh" style=" display:none;">有货</strong> </div>
+                </center>
+                <div class="golink">
+                    <a href="redirect.aspx?tjid=521575&amp;y=cu_share" target="_blank"><i class="icon-gobuy"></i>前往购买</a></div>
+            </div>
+            <div style="text-align: center; margin: 20px 10px;">
+                <img src="images/mmbweixin2.png" style="width: 100%; height: auto;">
+            </div>
+            <div class="cu-content-pl ui-border-t">
+                <div class="cu-content-pl ui-border-t" ng-bind-html="moneyproduct.productComment">
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

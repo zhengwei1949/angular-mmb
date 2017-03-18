@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <main class="site-nav" ng-controller="sitenavController">
+        <div class="link clearfix">
+            <a href="{{sitenav.navHref}}" target="_blank" ng-repeat="sitenav in sitenavs"><img src="{{sitenav.navImg}}" alt=""> {{sitenav.navTitle}}</a>
+        </div>
+    </main>
+</body>
+
+</html>

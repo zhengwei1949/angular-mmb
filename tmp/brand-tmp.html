@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <section id="brand" class="model" ng-controller="brandController">
+        <ol class="breadcrumb">
+            <li><a href="#/">首页</a></li>
+            <li><a href="#/brandtitle">全部品牌</a></li>
+            <li>品牌大全</li>
+        </ol>
+        <div class="hd">
+            <h3>平板电视哪个牌子好</h3>
+        </div>
+        <div class="row clearfix brand-list">
+            <ul class="category-title">
+                <li ng-repeat="brand in brands"><a href="#/productlist/{{brand.categoryId}}/1" title="三星平板电视"><em class="top{{$index+1}}">{{$index+1}}</em><div class="inner"><div class="tit">{{brand.brandName}}</div><p>{{brand.brandInfo}}</p></div></a></li>
+            </ul>
+        </div>
+        <div class="hd">
+            <h3><a href="prolist.aspx?id=4">平板电视产品销量排行</a></h3>
+        </div>
+        <div class="product-list">
+            <div class="media" ng-repeat="brandproduct in brandproducts">
+                <a class="media-left" href="#" ng-bind-html="brandproduct.productImg">
+                </a>
+                <div class="media-body">
+                    <h5><a href="#/bijia/{{brandproduct.categoryId}}/{{brandproduct.productId}}">{{brandproduct.productName}}</a></h5>
+                    <p class="price">{{brandproduct.productPrice}}</p>
+                    <em>{{brandproduct.productQuote}}</em><em>{{brandproduct.productCom}}</em>
+                </div>
+            </div>
+        </div>
+        <div class="hd">
+            <h3><a href="listComment.aspx?id=4" title="平板电视最新评论">平板电视最新评论</a></h3>
+        </div>
+        <div class="bd pllist product-com">
+            <ul>
+                <li ng-repeat="brandproductcom in brandproductcoms">
+                    <a href="#/bijia/{{brandproductcom.categoryId}}/{{brandproductcom.productId}}">
+                        <div class="protit clearfix">
+                            <div class="pic" ng-bind-html="brandproductcom.productImg"></div>
+                            <div class="tit">{{brandproductcom.productName}}</div>
+                        </div>
+                        <div class="plbox">
+                            <div class="name">{{brandproductcom.comName}}<span class="star"><em class="star5"></em></span><i>{{brandproductcom.comTime}}</i></div>
+                            <div class="con">{{brandproductcom.comContent}}</div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </section>
+</body>
+
+</html>

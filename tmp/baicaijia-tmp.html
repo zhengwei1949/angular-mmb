@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <main class="coupon-title" ng-controller="baicaijiaController">
+        <div class="bcj-head-cat">
+            <div class="bcj-title">
+                <div class="ul-wapper">
+                    <ul class="tabs clearfix">
+                        <li class="" ng-repeat="baicaijiatitle in baicaijiatitles"><a href="#/baicaijia/{{baicaijiatitle.titleId}}">{{baicaijiatitle.title}}</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="searchbtn">
+                <div class="icon-search">
+                </div>
+            </div>
+            <div class="searchbox" style="width: 375px; display: none;">
+                <div class="formsch clearfix">
+                    <form method="get" action="baicai.aspx">
+                        <div class="txt">
+                            <input type="search" name="key" value="" onfocus="delInput();" oninput="delInput();" class="border-img" placeholder="请输入搜索关键词" style="width: 317px;">
+                            <a href="javascript:;" class="a-delput"></a>
+                        </div>
+                        <div class="smt">
+                            <input type="submit" value="搜索">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="bcj-list">
+            <ul>
+                <li class="ui-border-tb" ng-repeat="baicaijiaproduct in baicaijiaproducts">
+                    <a biz-itemid="538754112089" class="gobuy" isconvert="1" href="http://s.click.taobao.com/lkqGHQx" target="_blank"></a>
+                    <div class="pic" ng-bind-html="baicaijiaproduct.productImg"><i></i></div>
+                    <div class="inf">
+                        <div class="i">
+                            <div class="t" ng-bind-html="baicaijiaproduct.productName"></div>
+                            <div class="pr" ng-bind-html="baicaijiaproduct.productPrice">
+                            </div>
+                        </div>
+                        <div class="o">
+                            <div class="bar clearfix" ng-bind-html="baicaijiaproduct.productCouponRemain"></div>
+                            <div class="b clearfix">
+                                <div class="q" ng-bind-html="baicaijiaproduct.productCoupon"></div>
+                                <div class="g" ng-bind-html="baicaijiaproduct.productHref"></div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </main>
+</body>
+
+</html>

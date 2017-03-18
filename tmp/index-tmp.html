@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <div class="index" ng-controller="indexmenuController">
+        <!-- 菜单区域 -->
+        <section id="menu">
+            <div class="row">
+                <div class="col-xs-3" ng-repeat="indexmenu in indexmenus">
+                    <a href="{{indexmenu.titlehref}}" ng-click="toggle()">
+                        <p ng-bind-html="indexmenu.img"></p>
+                        <p>{{indexmenu.name}}</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <!-- 商品推荐 -->
+        <section id="recommen">
+            <div class="recommen-title">
+                <h5>超值折扣推荐</h5>
+                <img src="images/header_app.png" alt="">
+            </div>
+            <div class="recommen-list">
+                <div class="media" ng-repeat="moneyctrl in moneyctrls">
+                    <a class="media-left" href="#" ng-bind-html="moneyctrl.productImgSm">
+                    </a>
+                    <div class="media-body">
+                        <h5>{{moneyctrl.productName}}</h5>
+                        <p class="price">{{moneyctrl.productPinkage}}</p>
+                        <span class="from">{{moneyctrl.productFrom}} | {{moneyctrl.productTime}}</span>
+                        <span class="comment"><i class="icon-comment"></i>{{moneyctrl.productComCount.replace("有","").replace('人评论',"")}}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="recommen-more">
+                <a href="#">更多优惠信息>></a>
+            </div>
+            <div class="recommen-title">
+                <h5>品牌排行</h5>
+                <img src="images/header_app.png" alt="">
+            </div>
+        </section>
+    </div>
+</body>
+
+</html>

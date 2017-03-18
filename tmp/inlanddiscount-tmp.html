@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <!-- 国内折扣的列表的主体内容盒子 -->
+    <main id="recommen-product" ng-controller="inlanddiscountController">
+        <!-- 国内折扣商品列表盒子 -->
+        <div class="inland-discount-list cu-friend">
+        	<ul>
+        		<li class="border-img" ng-repeat="inlanddiscount in inlanddiscounts">
+                <a href="#/discount/{{inlanddiscount.productId}}" title="《皮囊》 19.9元">
+                    <div class="img" ng-bind-html="inlanddiscount.productImg"></div>
+                    <div class="title">{{inlanddiscount.productName}}</div>
+                    <div class="subtit">{{inlanddiscount.productPrice}}</div>
+                    <div class="info">
+                        <div class="mall">{{inlanddiscount.productFrom}} | {{inlanddiscount.productTime}}</div>
+                    </div>
+                </a>
+            </li>
+        	</ul>
+        </div>
+        <!-- 加载中的效果 -->
+        <div class="loading">
+            <div class="load-container load4">
+                <div class="loader"></div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
